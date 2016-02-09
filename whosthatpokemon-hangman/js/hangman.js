@@ -89,10 +89,14 @@ function cleanGuess() {
     $.each(guesses, function(index, element) {
         if (element.length > 0 && $.inArray(element, uniqueGuesses) == -1) {
             uniqueGuesses.push(element);
-        }
+            //FUNCTION TO FLASH ALL ELEMENTS IF PLAYER PRESS KEY FOR CHARACTER ALREADY USED
+        } else {
+            $("*").fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100); 
+            }
     });
     guesses = uniqueGuesses;
 }
+
 
 function addGuess() {
     if (/^[a-zA-Z]*$/.test($('#guess').val()) && typeof $('#guess').val() !== "undefined") {

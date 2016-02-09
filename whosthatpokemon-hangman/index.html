@@ -12,34 +12,37 @@
     <body>
         <div class="container">
             <div class="page-header">
-                <h1>Hangman | <strong>Stretch Projects</strong></h1>
+                <h1>Who's that Pokemon? | Hangman Game </h1>
             </div>
-
+<!-- SCAFFOLD IMAGE STARTING POINT -->
             <div class="col-md-2">
-                <div id="hangman_img" class="image0"></div>
+                <div id="hangman_img" class="image0"></div> 
             </div>
 
             <div id="word" class="col-md-4 text-center">
-                <h4>Your word is:</h4>
-                <p><strong id="targetWord"></strong></p>
+                <!-- <h4>Your word is:</h4> -->
+<!-- WHERE THE CHOSEN WORD LIVES AND HIDDEN -->                
+                <p><strong id="targetWord"></strong></p> 
             </div>
-
+<!-- WHERE LETTERS THE PLAYER'S LETTERS ARE GOING TO APPEAR -->
             <div id="guesses" class="col-md-4 text-center">
                 <h4>You have guessed</h4>
-                <p><strong id="previousGuesses"><em>nothing yet... guess a letter</em></strong></p>
+                <p><strong id="previousGuesses"><em>nothing yet... guess a letter</em></strong></p> 
             </div>
-
+<!-- THIS IS WHERE PLAYERS ARE GOING TO INPUT THEIR GUESSES -->
             <div class="row">
                 <div id="guessInput" class="col-md-8 text-center">
                     <br/>
                     <br/>
                     <br/>
                     <input type="text" maxlength="1" id="guess" placeholder="Type a letter" />
-                </div>
+                </div> 
             </div>
         </div>
         <script src="js/jquery.min.js" type="text/javascript"></script>
         <script src="js/hangman.js" type="text/javascript"></script>
+
+<!-- THE FOLLOWING LINES ARE FOR THE 'WIN/LOSE' DIALOG BOX MODAL USING BOOTSTRAP -->
         <div class="modal fade" id="endGameDialog" tabindex="-1" role="dialog" aria-labelledby="endGameDialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
