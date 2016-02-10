@@ -59,24 +59,24 @@ function newWord() {
     targetWord = wordlist[Math.floor(Math.random() * wordlist.length)];
 }
 
-function obfuscateWord() {
-    var obWord = '';
+function hideWord() {
+    var hdWord = '';
 
     for (var i = 0; i < targetWord.length; i++) {
         if (guesses.indexOf(targetWord[i].toLowerCase(), 0) == -1) {
-            obWord += ' _ ';
+            hdWord += ' _ ';
         } else {
-            obWord += targetWord[i];
+            hdWord += targetWord[i];
         }
     }
-    return obWord;
+    return hdWord;
 }
 
 function drawWord() {
     while (targetWord == '') {
         newWord();
     }
-    $('#targetWord').html(obfuscateWord());
+    $('#targetWord').html(hideWord());
 }
 
 function drawGuesses() {
@@ -138,8 +138,10 @@ function reviewLives() {
 }
 
 function checkIfWon() {
-    if (obfuscateWord() == targetWord) {
+    if (hideWord() == targetWord) {
         endGameDialog(true);
+        $('h1').addClass('animated hinge');
+
     }
 }
 
